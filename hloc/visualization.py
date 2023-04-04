@@ -5,7 +5,7 @@ import pickle
 import pycolmap
 
 from .utils.viz import (
-        plot_images, plot_keypoints, plot_matches, cm_RdGn, add_text)
+        plot_images, plot_keypoints, plot_matches, cm_RdGn, add_text, save_plot)
 from .utils.io import read_image
 
 
@@ -137,3 +137,4 @@ def visualize_loc_from_log(image_dir, query_name, loc, reconstruction=None,
         opts = dict(pos=(0.01, 0.01), fs=5, lcolor=None, va='bottom')
         add_text(0, query_name, **opts)
         add_text(1, db_name, **opts)
+        save_plot("./matching_result.jpg")
